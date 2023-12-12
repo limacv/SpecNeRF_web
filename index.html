@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VideoLoop3D">
+  <meta name="google-site-verification" content="tHWkCv5kReG-fq--FCW61agzVOiLPlJyOQ_-2OEmgy8" />
+  <meta name="keywords" content="NeRF, Specular, Reflections, Shiny, Ref-NeRF, 3D Gaussians, Directional Encodings">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpecNeRF</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            SpecNeRF: Gaussian Directional Encoding for Specular Reflections</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://limacv.github.io/homepage/">Li Ma</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://notes.vasuagrawal.com/">Vasu Agrawal</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://haithemturki.com/">Haithem Turki</a><sup>2,3</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://changilkim.com">Changil Kim</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+                  <a href="https://www.chengao.vision">Chen Gao</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cse.ust.hk/~psander/">Pedro V. Sander</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://zollhoefer.com">Michael Zollhöfer</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://richardt.name">Christian Richardt</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology</span>
+            <span class="author-block"><sup>2</sup>Meta</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>3</sup>Carnegie Mellon University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Arxiv Link. -->
+              <span class="link-block">
+                <a href="https://empty"
+                   class="external-link button is-normal is-rounded"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Arxiv(coming soon)</span>
+                </a>
+              </span>
+              <!-- Arxiv Link. -->
+              <span class="link-block">
+                <a href="https://empty"
+                   class="external-link button is-normal is-rounded"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Pdf(coming soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/limacv/VideoLoop3D"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://limacv.github.io/VideoLoopUI/"
+                   class="external-link button is-normal is-rounded"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Video(coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2>
+        <img src="images/teaser.jpg"
+                 class="teaser image"
+                 alt="teaser image"/>
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        We propose a Gaussian directional encoding that leads to better modeling of specular reflections under near-field lighting conditions. 
+        In contrast, the integrated directional encoding utilized in <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a> 
+        and fourier directional encoding in <a href="https://www.matthewtancik.com/nerf">NeRF</a> exhibits suboptimal performance under similar conditions.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+Neural radiance fields have achieved remarkable performance in modeling the appearance of 3D scenes.
+However, existing approaches still struggle with the view-dependent appearance of glossy surfaces, 
+especially under complex lighting of indoor environments.
+Unlike existing methods, which typically assume distant lighting like an environment map, 
+we propose a learnable Gaussian directional encoding to better model the view-dependent effects under near-field lighting conditions.
+Importantly, our new directional encoding captures the spatially-varying nature of near-field lighting and emulates the behavior of prefiltered environment maps.
+As a result, it enables the efficient evaluation of preconvolved specular color at any 3D location with varying roughness coefficients.
+We further introduce a data-driven geometry prior that helps alleviate the shape radiance ambiguity in reflection modeling.
+We show that our Gaussian directional encoding and geometry prior significantly improve the modeling of challenging specular reflections in neural radiance fields, 
+which helps decompose appearance into more physically meaningful components.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Supplementary Video</h2>
+        <div class="pipeline">
+          <video poster="" id="demo" controls="" height="100%">
+            <source src="images/SpecNeRF-video.mov" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Pipeline. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="pipeline">
+          <img src="images/pipeline.jpg"
+                 class="pipeline image"
+                 alt="pipeline image"/>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            We propose a two-stage pipeline to generate the MTV representation from asynchronous mult-view videos.
+            In the first stage, we initialize the MTV by optimizing a static Multiplane Image (MPI) 
+            and a 3D loopable mask using long-exposure images and 2D loopable masks derived from the input videos. 
+            The key enabler for specular reflections is our novel 3D Gaussian directional encoding module that
+            converts the reflected ray into a spatially-varying embedding, which is further decoded into specular color.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Pipeline. -->
+
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{specnerf,
+      title   ={SpecNeRF: Gaussian Directional Encoding for Specular Reflections},
+      author  ={Li Ma and Vasu Agrawal and Haithem Turki and Changil Kim and Chen Gao and Pedro V. Sander and Michael Zollhöfer and Christian Richardt},
+      journal ={???},
+      year    ={???}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The source code of this website is borrowed from 
+            <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/limacv/deblurnerf">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

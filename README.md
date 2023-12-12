@@ -1,0 +1,1 @@
+This source code contains the [webpage](https://limacv.github.io/SpecNeRF_web/) for the paper "SpecNeRF: Gaussian Directional Encoding for Specular ReflectionsInput". 
