@@ -86,13 +86,13 @@
               </span>
               <!-- Arxiv Link. -->
               <span class="link-block">
-                <a href="https://empty"
-                   class="external-link button is-normal is-rounded"
+                <a href="images/SpecNeRF.pdf"
+                   class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Pdf(coming soon)</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -108,13 +108,13 @@
               </span> -->
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://limacv.github.io/VideoLoopUI/"
-                   class="external-link button is-normal is-rounded"
+                <a href="https://www.youtube.com/watch?v=3nUooe3pVA0"
+                   class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                      <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Video(coming soon)</span>
+                  <span>Video</span>
                   </a>
               </span>
             </div>
@@ -179,8 +179,7 @@ which helps decompose appearance into more physically meaningful components.
     </div>
 
 
-    <!-- Pipeline. -->
-    <!-- <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Pipeline</h2>
         <div class="pipeline">
@@ -189,27 +188,38 @@ which helps decompose appearance into more physically meaningful components.
                  alt="pipeline image"/>
         </div>
       </div>
-    </div> -->
+    </div>
 
-    <!-- <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            We propose a two-stage pipeline to generate the MTV representation from asynchronous mult-view videos.
-            In the first stage, we initialize the MTV by optimizing a static Multiplane Image (MPI) 
-            and a 3D loopable mask using long-exposure images and 2D loopable masks derived from the input videos. 
-            The key enabler for specular reflections is our novel 3D Gaussian directional encoding module that
-            converts the reflected ray into a spatially-varying embedding, which is further decoded into specular color.
+            Here we present an overview of our model. 
+            There are two key factors that facilitate the model's capability in modeling photorealitic specular reflections: 
+            1) The novel 3D Gaussian directional encoding module that
+            transforms the reflected rays into a spatially-varying embeddings, which are further decoded into specular colors. 
+            2) Monocular normal supervision which effectively resolves the shape-radiance ambiguity inherent in specular reflection modeling.
           </p>
         </div>
       </div>
-    </div> -->
-    <!--/ Pipeline. -->
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Decomposition Results</h2>
+        <div class="results">
+          <img src="images/Decomposition.png"
+                 class="decomposition results"
+                 alt="decomposition results"/>
+        </div>
+      </div>
+    </div>
 
-
-
-  </div>
+    
 </section>
+
+
+
 
 
 <section class="section" id="BibTeX">
